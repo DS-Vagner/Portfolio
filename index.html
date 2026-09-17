@@ -183,6 +183,56 @@
             transform: translateY(-2px);
         }
 
+        .company-link {
+            color: var(--primary-hover);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        .company-link:hover {
+            color: var(--primary);
+            text-decoration: underline;
+        }
+
+        .location-info {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-bottom: 0.8rem;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .exp-list {
+            margin-top: 0.8rem;
+            padding-left: 1.2rem;
+            color: var(--text-main);
+        }
+
+        .exp-list li {
+            margin-bottom: 0.4rem;
+        }
+
+
+        /* --- FERRAMENTAS INTEGRADAS DENTRO DO CARD --- */
+        .exp-tools {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1rem; /* Espaçamento sutil após a lista */
+        }
+
+        .tool-tag {
+            font-size: 0.8rem;
+            background-color: rgba(157, 78, 221, 0.15);
+            color: var(--primary-hover);
+            border: 1px solid var(--card-border);
+            padding: 0.25rem 0.6rem;
+            border-radius: 4px;
+            font-weight: 500;
+}
+
         /* --- CARDS & TIMELINE --- */
         .timeline {
             display: flex;
@@ -362,12 +412,13 @@
         </div>
         <div class="hero-right">
             <h1>Vagner Marques</h1>
-            <h2>Profissional de Dados & Analytics</h2>
+            <h2>Profissional de Dados, Analytics & business intelligence.</h2>
             <p>Especialista em transformar dados brutos em inteligência de negócios, automação de processos e soluções analíticas.</p>
             <div class="btn-group">
-                <a href="#projetos" class="btn btn-primary"><i class="fa-solid fa-code"></i> Ver Projetos</a>
                 <a href="https://github.com/DS-Vagner" target="_blank" class="btn btn-secondary"><i class="fa-brands fa-github"></i> GitHub</a>
                 <a href="https://www.linkedin.com/in/vagnermarques-dados/" target="_blank" class="btn btn-secondary"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
+                <a href="#projetos" class="btn btn-primary"><i class="fa-solid fa-code"></i> Ver Projetos</a>
+
             </div>
         </div>
     </section>
@@ -376,39 +427,163 @@
     <section id="sobre">
         <h2 class="section-title">Sobre Mim</h2>
         <p>
-            [Cole aqui o seu texto da seção 'Sobre' do seu LinkedIn]
+            <p>
+    Sou profissional em transição de carreira para a área de Dados e Business Intelligence, trazendo mais de 15 anos de sólida experiência em Engenharia, 
+    Infraestrutura Crítica e Orçamentos de alta complexidade em setores como Data Centers, Telecom e Hospitalar.
+</p>
+<p>
+    Minha bagagem em análise de projetos, custos, precificação, curva ABC, BDI e planejamento estratégico me confere uma visão de negócio diferenciada, 
+    compreendo o impacto dos números na prática e no resultado financeiro para tomada de desição, indo além dos dashboards.
+</p>
+<p>
+    Atualmente, uno essa mentalidade analítica de negócios ao domínio técnico em Python, SQL, Power BI, ETL e Machine Learning para transformar dados brutos 
+    em decisões estratégicas e soluções escaláveis.
+</p>
         </p>
     </section>
 
-    <!-- 3. EXPERIÊNCIA -->
-    <section id="experiencia">
-        <h2 class="section-title">Experiência</h2>
-        <div class="timeline">
-            
-            <div class="card">
-                <div class="card-header">
-                    <div>
-                        <h3 class="card-title">[Seu Cargo Atual ou Mais Recente]</h3>
-                        <span class="card-subtitle">[Nome da Empresa]</span>
-                    </div>
-                    <span class="card-date">[Mês/Ano - Atual]</span>
+   <!-- 3. EXPERIÊNCIA -->
+<section id="experiencia">
+    <h2 class="section-title">Experiência Profissional</h2>
+    <div class="timeline">
+        
+        <!-- EXPERIÊNCIA 1: AGEPLAN -->
+        <div class="card">
+            <div class="card-header">
+                <div>
+                    <h3 class="card-title">Orçamentista Sênior</h3>
+                    <span class="card-subtitle">
+                        <a href="https://www.ageplan.com.br" target="_blank" rel="noopener noreferrer" class="company-link">
+                            Ageplan Engenharia e Construções <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 0.75rem;"></i>
+                        </a>
+                    </span>
                 </div>
-                <p>[Breve descrição das suas responsabilidades, ferramentas utilizadas e principais entregas.]</p>
+                <span class="card-date calc-duration" data-start="2021-05" data-end="2025-08">
+                    mai/2021 – ago/2025
+                </span>
             </div>
 
-            <div class="card">
-                <div class="card-header">
-                    <div>
-                        <h3 class="card-title">[Cargo Anterior]</h3>
-                        <span class="card-subtitle">[Nome da Empresa]</span>
-                    </div>
-                    <span class="card-date">[Mês/Ano - Mês/Ano]</span>
-                </div>
-                <p>[Breve descrição das suas responsabilidades e principais entregas.]</p>
+            <div class="location-info">
+                <i class="fa-solid fa-location-dot"></i> São Paulo, SP
             </div>
 
+            <ul class="exp-list">
+                <li>Responsável pela elaboração dos custos e orçamentos para projetos de Data Center, Rádio Base e Industrial, atuando da análise de projeto, custos até a proposta comercial final.</li>
+                <li>Estruturei composições de custo unitário, mão de obra e equipamentos em planilhas detalhadas para formação de preço e à margem de projetos de alto valor.</li>
+                <li>Análise dos dados de cotações, BDI e curva ABC para identificar oportunidades de otimização, avaliar a viabilidade dos projetos e o custo final.</li>
+                <li>Elaboração de propostas técnicas e comerciais a clientes internos e externos, traduzindo dados e argumentos em escopo, planejamento e custo de negociação.</li>
+            </ul>
+
+            <div class="exp-tools">
+                <span class="tool-tag">Excel</span>
+                <span class="tool-tag">AutoCAD</span>
+                <span class="tool-tag">PowerPoint</span>
+                <span class="tool-tag">MS Project</span>
+                <span class="tool-tag">Power BI</span>
+            </div>
         </div>
-    </section>
+
+        <!-- EXPERIÊNCIA 2: GRUPO CASAS BAHIA -->
+        <div class="card">
+            <div class="card-header">
+                <div>
+                    <h3 class="card-title">Analista de Custos e Projetos (Orçamentista)</h3>
+                    <span class="card-subtitle">
+                        <a href="https://www.grupocasasbahia.com.br" target="_blank" rel="noopener noreferrer" class="company-link">
+                            Grupo Casas Bahia <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 0.75rem;"></i>
+                        </a>
+                    </span>
+                </div>
+                <span class="card-date calc-duration" data-start="2018-05" data-end="2021-05">
+                    mai/2018 – mai/2021
+                </span>
+            </div>
+
+            <div class="location-info">
+                <i class="fa-solid fa-location-dot"></i> São Caetano do Sul, SP
+            </div>
+
+            <ul class="exp-list">
+                <li>Analisei projetos arquitetônicos e relatórios de manutenção para equalizar soluções técnicas e comerciais.</li>
+                <li>Elaborei planilhas quantitativas detalhadas de custos diretos e indiretos, com cálculo de BDI e mão de obra, apoiando decisões de investimento em manutenção e reforma de lojas.</li>
+                <li>Organizei a curva ABC de materiais e equipamentos, priorizando itens de maior impacto no custo final e reduzindo o tempo de fechamento de orçamentos.</li>
+            </ul>
+
+            <div class="exp-tools">
+                <span class="tool-tag">Excel Intermediário</span>
+                <span class="tool-tag">Curva ABC</span>
+                <span class="tool-tag">Cálculo de BDI</span>
+                <span class="tool-tag">AutoCAD</span>
+                <span class="tool-tag">MS Project</span>
+            </div>
+        </div>
+
+        <!-- EXPERIÊNCIA 3: EPIME -->
+        <div class="card">
+            <div class="card-header">
+                <div>
+                    <h3 class="card-title">Orçamentista Pleno</h3>
+                    <span class="card-subtitle">
+                        Epime Engenharia Elétrica, Arquitetura e Construções Ltda
+                    </span>
+                </div>
+                <span class="card-date calc-duration" data-start="2017-08" data-end="2018-05">
+                    ago/2017 – mai/2018
+                </span>
+            </div>
+
+            <div class="location-info">
+                <i class="fa-solid fa-location-dot"></i> São Paulo, SP
+            </div>
+
+            <ul class="exp-list">
+                <li>Realizei análise técnica de projetos elétricos, hidráulicos e de combate a incêndio, com levantamento quantitativo e precificação unitária.</li>
+                <li>Elaborei planilhas orçamentárias detalhadas e mapas de cotação, dando suporte à negociação de prazos e custos com fornecedores.</li>
+                <li>Estruturei propostas técnicas e comerciais, alinhando escopo, cronograma e condições comerciais para aprovação do cliente.</li>
+            </ul>
+
+            <div class="exp-tools">
+                <span class="tool-tag">Excel</span>
+                <span class="tool-tag">AutoCAD</span>
+                <span class="tool-tag">Mapas de Cotação</span>
+                <span class="tool-tag">Propostas Comerciais</span>
+            </div>
+        </div>
+
+        <!-- EXPERIÊNCIA 4: SISTENGE -->
+        <div class="card">
+            <div class="card-header">
+                <div>
+                    <h3 class="card-title">Orçamentista Técnico</h3>
+                    <span class="card-subtitle">
+                        Sistenge – Engenharia de Soluções Especiais
+                    </span>
+                </div>
+                <span class="card-date calc-duration" data-start="2012-10" data-end="2017-04">
+                    out/2012 – abr/2017
+                </span>
+            </div>
+
+            <div class="location-info">
+                <i class="fa-solid fa-location-dot"></i> São Paulo, SP
+            </div>
+
+            <ul class="exp-list">
+                <li>Atuei no Departamento de Custos e Orçamentos, da leitura de projetos técnicos ao fechamento de propostas comerciais.</li>
+                <li>Desenvolvi estimativas de custo e composições unitárias de serviços e equipamentos, consolidando dados em planilhas para controle de custo atualizado.</li>
+                <li>Apliquei Engenharia de Valores para identificar alternativas de otimização de custo, apoiando negociações com fornecedores e clientes.</li>
+            </ul>
+
+            <div class="exp-tools">
+                <span class="tool-tag">Excel</span>
+                <span class="tool-tag">Composição de Custos</span>
+                <span class="tool-tag">Engenharia de Valores</span>
+                <span class="tool-tag">AutoCAD</span>
+            </div>
+        </div>
+
+    </div>
+</section>
 
     <!-- 4. FORMAÇÃO -->
     <section id="formacao">
@@ -510,6 +685,54 @@
     <footer>
         <p>&copy; 2026 Vagner Marques. Desenvolvido para apresentar projetos e trajetória em Dados.</p>
     </footer>
+
+<script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const dateElements = document.querySelectorAll('.calc-duration');
+
+            dateElements.forEach(el => {
+                const startStr = el.getAttribute('data-start'); // Formato: "YYYY-MM"
+                const endStr = el.getAttribute('data-end');     // Formato: "YYYY-MM" ou "present"
+
+                if (!startStr) return;
+
+                const [startYear, startMonth] = startStr.split('-').map(Number);
+                let endYear, endMonth;
+
+                if (endStr === 'present' || !endStr) {
+                    const now = new Date();
+                    endYear = now.getFullYear();
+                    endMonth = now.getMonth() + 1; // getMonth() é 0-indexed
+                } else {
+                    [endYear, endMonth] = endStr.split('-').map(Number);
+                }
+
+                // Cálculo total de meses
+                let totalMonths = (endYear - startYear) * 12 + (endMonth - startMonth) + 1;
+
+                if (totalMonths < 1) totalMonths = 1;
+
+                const years = Math.floor(totalMonths / 12);
+                const months = totalMonths % 12;
+
+                let durationStr = '';
+                
+                if (years > 0) {
+                    durationStr += `${years} ${years === 1 ? 'ano' : 'anos'}`;
+                }
+                
+                if (months > 0) {
+                    if (durationStr !== '') durationStr += ' e ';
+                    durationStr += `${months} ${months === 1 ? 'mês' : 'meses'}`;
+                }
+
+                // Anexa a duração calculada ao texto da data existente
+                el.textContent = `${el.textContent.trim()} (${durationStr})`;
+            });
+        });
+    </script>
+</body>
+</html>
 
 </body>
 </html>
