@@ -220,7 +220,7 @@
             display: flex;
             flex-wrap: wrap;
             gap: 0.5rem;
-            margin-top: 1rem; /* Espaçamento sutil após a lista */
+            margin-top: 1rem; /* (Espaçamento sutil após a lista) */
         }
 
         .tool-tag {
@@ -232,6 +232,27 @@
             border-radius: 4px;
             font-weight: 500;
 }
+
+        /* Botão Ver Mais / Ver Menos */
+        .btn-toggle-details {
+            background: none;
+            border: none;
+            color: var(--primary-hover);
+            font-weight: 600;
+            font-size: 0.9rem;
+            cursor: pointer;
+            margin-top: 1rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0;
+            transition: color 0.3s;
+        }
+
+        .btn-toggle-details:hover {
+            color: var(--primary);
+            text-decoration: underline;
+        }
 
         /* --- CARDS & TIMELINE --- */
         .timeline {
@@ -364,27 +385,130 @@
         }
 
         /* RESPONSIVIDADE */
-        @media (max-width: 768px) {
-            #inicio {
-                flex-direction: column;
-                text-align: center;
-                padding-top: 6rem;
-            }
+        img {
+            max-width: 100%;
+            height: auto;
+        }
 
-            .btn-group {
-                justify-content: center;
+        /* --- MEDIA QUERIES (CELULARES E TABLETS) --- */
+        @media (max-width: 768px) {
+            /* Ajuste de cabeçalho e navegação */
+            nav {
+                padding: 1rem;
+                flex-direction: column;
+                gap: 0.8rem;
             }
 
             .nav-links {
-                display: none;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 0.8rem;
+            }
+
+            .nav-links a {
+                font-size: 0.85rem;
+            }
+
+            /* Espaçamento das seções no celular */
+            section {
+                padding: 4rem 1rem;
+            }
+
+            .section-title {
+                font-size: 1.6rem;
+            }
+
+            /* Seção Início (Hero) */
+            #inicio {
+                flex-direction: column;
+                text-align: center;
+                padding-top: 7rem;
+                gap: 2rem;
+            }
+
+            .hero-left {
+                width: 100%;
+            }
+
+            .profile-img {
+                width: 200px;
+                height: 200px;
+            }
+
+            .hero-right h1 {
+                font-size: 2.2rem;
+            }
+
+            .hero-right h2 {
+                font-size: 1.2rem;
+            }
+
+            .btn-group {
+                flex-direction: column;
+                width: 100%;
+                gap: 0.8rem;
+            }
+
+            .btn {
+                justify-content: center;
+                width: 100%;
+            }
+
+            /* Cards de Experiência e Outros */
+            .card {
+                padding: 1.2rem;
             }
 
             .card-header {
                 flex-direction: column;
-                gap: 0.3rem;
+                align-items: flex-start;
+                gap: 0.5rem;
+            }
+
+            .card-date {
+                align-self: flex-start;
+            }
+
+            /* Grid de Competências e Projetos */
+            .skills-grid {
+                grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+                gap: 0.8rem;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            /* Tags de ferramentas */
+            .exp-tools {
+                gap: 0.4rem;
+            }
+
+            .tool-tag {
+                font-size: 0.75rem;
+            }
+
+            /* Seção de Contato */
+            .contact-container {
+                flex-direction: column;
+                width: 100%;
+            }
+
+            .contact-item {
+                width: 100%;
+                justify-content: center;
             }
         }
     </style>
+
+
+
+
+
+
+
+
 </head>
 <body>
 
@@ -467,20 +591,31 @@
                 <i class="fa-solid fa-location-dot"></i> São Paulo, SP
             </div>
 
-            <ul class="exp-list">
-                <li>Responsável pela elaboração dos custos e orçamentos para projetos de Data Center, Rádio Base e Industrial, atuando da análise de projeto, custos até a proposta comercial final.</li>
-                <li>Estruturei composições de custo unitário, mão de obra e equipamentos em planilhas detalhadas para formação de preço e à margem de projetos de alto valor.</li>
-                <li>Análise dos dados de cotações, BDI e curva ABC para identificar oportunidades de otimização, avaliar a viabilidade dos projetos e o custo final.</li>
-                <li>Elaboração de propostas técnicas e comerciais a clientes internos e externos, traduzindo dados e argumentos em escopo, planejamento e custo de negociação.</li>
-            </ul>
-
+            <!-- Informação sempre visível -->
+            <p>
+                Responsável pela elaboração dos custos e orçamentos para projetos de Data Center, Rádio Base e Industrial...
+            </p>
             <div class="exp-tools">
-                <span class="tool-tag">Excel</span>
-                <span class="tool-tag">AutoCAD</span>
-                <span class="tool-tag">PowerPoint</span>
-                <span class="tool-tag">MS Project</span>
-                <span class="tool-tag">Power BI</span>
+                    <span class="tool-tag">Excel</span>
+                    <span class="tool-tag">AutoCAD</span>
+                    <span class="tool-tag">Power BI</span>
             </div>
+
+            <!-- CONTEÚDO EXPANSÍVEL (Inicia escondido) -->
+            <div class="details-content" style="display: none; margin-top: 1rem;">
+                <ul class="exp-list">
+                    <li>Estruturei composições de custo unitário, mão de obra e equipamentos...</li>
+                    <li>Análise de dados de cotações, BDI e curva ABC...</li>
+                    <li>Elaboração de propostas técnicas e comerciais...</li>
+                </ul>
+
+                
+            </div>
+
+            <!-- BOTÃO PARA EXPANDIR / RECOLHER -->
+            <button onclick="toggleDetails(this)" class="btn-toggle-details">
+                <i class="fa-solid fa-chevron-down"></i> Ver mais detalhes
+            </button>
         </div>
 
         <!-- EXPERIÊNCIA 2: GRUPO CASAS BAHIA -->
@@ -714,6 +849,7 @@
 
                 const years = Math.floor(totalMonths / 12);
                 const months = totalMonths % 12;
+
                 let durationStr = '';
                 
                 if (years > 0) {
@@ -729,6 +865,21 @@
                 el.textContent = `${el.textContent.trim()} (${durationStr})`;
             });
         });
+
+        function toggleDetails(button) {
+            // Encontra o bloco .details-content mais próximo dentro do mesmo card
+            const card = button.closest('.card');
+            const content = card.querySelector('.details-content');
+
+            if (content.style.display === "none" || content.style.display === "") {
+                content.style.display = "block";
+                button.innerHTML = '<i class="fa-solid fa-chevron-up"></i> Ver menos';
+            } else {
+                content.style.display = "none";
+                button.innerHTML = '<i class="fa-solid fa-chevron-down"></i> Ver mais detalhes';
+            }
+        }   
+        
     </script>
 </body>
 </html>
