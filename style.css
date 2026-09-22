@@ -113,12 +113,24 @@ section {
 
 /* Foto à esquerda */
 .profile-img {
-    width: 270px;
-    height: 270px;
-    border-radius: 50%;
-    border: 4px solid var(--primary);
-    box-shadow: 0 0 25px rgba(157, 78, 221, 0.4);
-    object-fit: cover;
+    width: 250px;              /* Ajuste a largura conforme preferir */
+    height: 320px;             /* Mantém o formato retangular */
+    object-fit: cover;         /* Garante que a foto não fique distorcida */
+    border-radius: 20px;       /* Cantos arredondados */
+    
+    /* Borda fina com gradiente roxo */
+    border: 3px solid transparent;
+    background-image: linear-gradient(#1a132b, #1a132b), 
+                      linear-gradient(135deg, #9d4edd, #ff79c6, #7b2cbf);
+    background-origin: border-box;
+    background-clip: content-box, border-box;
+    
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4); /* Sombra suave para dar destaque */
+    transition: transform 0.3s ease;
+}
+
+.profile-img:hover {
+    transform: scale(1.02); /* Efeito suave ao passar o mouse */
 }
 
 .hero-right {
