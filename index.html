@@ -6,510 +6,10 @@
     <title>Vagner Marques | Portfólio de Dados</title>
     <!-- Ícones FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        /* --- VARIÁVEIS DE CORES (Tons de Roxo) --- */
-        :root {
-            --bg-color: #0f0b1a;          /* Roxo ultra escuro */
-            --card-bg: #1a132b;           /* Roxo escuro para cards */
-            --card-border: #2e2349;       /* Borda sutil */
-            --primary: #9d4edd;           /* Roxo principal */
-            --primary-hover: #c77dff;     /* Roxo claro ao passar o mouse */
-            --text-main: #f1f0f5;         /* Texto principal */
-            --text-muted: #a39eb8;        /* Texto secundário */
-            --accent: #7b2cbf;           /* Tom de roxo complementar */
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            scroll-behavior: smooth;
-        }
-
-        body {
-            background-color: var(--bg-color);
-            color: var(--text-main);
-            line-height: 1.6;
-        }
-
-        /* --- NAVEGAÇÃO --- */
-        header {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background-color: rgba(15, 11, 26, 0.9);
-            backdrop-filter: blur(10px);
-            z-index: 1000;
-            border-bottom: 1px solid var(--card-border);
-        }
-
-        nav {
-            max-width: 1100px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1.2rem 2rem;
-        }
-
-        .logo {
-            font-size: 1.4rem;
-            font-weight: bold;
-            color: var(--primary);
-            text-decoration: none;
-        }
-
-        .nav-links {
-            display: flex;
-            list-style: none;
-            gap: 1.5rem;
-        }
-
-        .nav-links a {
-            color: var(--text-muted);
-            text-decoration: none;
-            font-size: 0.95rem;
-            transition: color 0.3s;
-        }
-
-        .nav-links a:hover {
-            color: var(--primary-hover);
-        }
-
-        /* --- SEÇÕES --- */
-        section {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 5rem 2rem;
-            border-bottom: 1px solid var(--card-border);
-        }
-
-        .section-title {
-            font-size: 2rem;
-            color: var(--primary);
-            margin-bottom: 2rem;
-            position: relative;
-            display: inline-block;
-        }
-
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 50%;
-            height: 3px;
-            background-color: var(--accent);
-            border-radius: 2px;
-        }
-
-        /* --- SEÇÃO INÍCIO --- */
-        #inicio {
-            min-height: 90vh;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 3rem;
-            padding-top: 8rem;
-        }
-
-        .hero-left {
-            flex: 1;
-            display: flex;
-            justify-content: center;
-        }
-
-        /* Foto à esquerda */
-        .profile-img {
-            width: 270px;
-            height: 270px;
-            border-radius: 50%;
-            border: 4px solid var(--primary);
-            box-shadow: 0 0 25px rgba(157, 78, 221, 0.4);
-            object-fit: cover;
-        }
-
-        .hero-right {
-            flex: 1.5;
-        }
-
-        .hero-right h1 {
-            font-size: 3rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .hero-right h2 {
-            font-size: 1.5rem;
-            color: var(--primary-hover);
-            margin-bottom: 1.5rem;
-            font-weight: 400;
-        }
-
-        .btn-group {
-            display: flex;
-            gap: 1rem;
-            margin-top: 1.5rem;
-        }
-
-        .btn {
-            padding: 0.8rem 1.5rem;
-            border-radius: 6px;
-            text-decoration: none;
-            font-weight: bold;
-            transition: all 0.3s ease;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .btn-primary {
-            background-color: var(--primary);
-            color: #fff;
-        }
-
-        .btn-primary:hover {
-            background-color: var(--accent);
-            transform: translateY(-2px);
-        }
-
-        .btn-secondary {
-            border: 1px solid var(--primary);
-            color: var(--primary-hover);
-        }
-
-        .btn-secondary:hover {
-            background-color: var(--card-bg);
-            transform: translateY(-2px);
-        }
-
-        .company-link {
-            color: var(--primary-hover);
-            text-decoration: none;
-            font-weight: 600;
-            transition: color 0.3s;
-        }
-
-        .company-link:hover {
-            color: var(--primary);
-            text-decoration: underline;
-        }
-
-        .location-info {
-            font-size: 0.9rem;
-            color: var(--text-muted);
-            margin-bottom: 0.8rem;
-            display: flex;
-            align-items: center;
-            gap: 0.4rem;
-        }
-
-        .exp-list {
-            margin-top: 0.8rem;
-            padding-left: 1.2rem;
-            color: var(--text-main);
-        }
-
-        .exp-list li {
-            margin-bottom: 0.4rem;
-        }
-
-
-        /* --- FERRAMENTAS INTEGRADAS DENTRO DO CARD --- */
-        .exp-tools {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-            margin-top: 1rem; /* (Espaçamento sutil após a lista) */
-        }
-
-        .tool-tag {
-            font-size: 0.8rem;
-            background-color: rgba(157, 78, 221, 0.15);
-            color: var(--primary-hover);
-            border: 1px solid var(--card-border);
-            padding: 0.25rem 0.6rem;
-            border-radius: 4px;
-            font-weight: 500;
-}
-
-        /* Botão Ver Mais / Ver Menos */
-        .btn-toggle-details {
-            background: none;
-            border: none;
-            color: var(--primary-hover);
-            font-weight: 600;
-            font-size: 0.9rem;
-            cursor: pointer;
-            margin-top: 1rem;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.4rem;
-            padding: 0;
-            transition: color 0.3s;
-        }
-
-        .btn-toggle-details:hover {
-            color: var(--primary);
-            text-decoration: underline;
-        }
-
-        /* --- CARDS & TIMELINE --- */
-        .timeline {
-            display: flex;
-            flex-direction: column;
-            gap: 1.5rem;
-        }
-
-        .card {
-            background-color: var(--card-bg);
-            border: 1px solid var(--card-border);
-            border-radius: 8px;
-            padding: 1.5rem;
-            transition: transform 0.3s, border-color 0.3s;
-        }
-
-        .card:hover {
-            transform: translateY(-3px);
-            border-color: var(--primary);
-        }
-
-        .card-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            margin-bottom: 0.5rem;
-        }
-
-        .card-title {
-            font-size: 1.2rem;
-            color: var(--text-main);
-        }
-
-        .card-subtitle {
-            color: var(--primary-hover);
-            font-size: 0.95rem;
-        }
-
-        .card-date {
-            font-size: 0.85rem;
-            color: var(--text-muted);
-            background: rgba(157, 78, 221, 0.1);
-            padding: 0.2rem 0.6rem;
-            border-radius: 4px;
-        }
-
-        /* --- COMPETÊNCIAS --- */
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-            gap: 1rem;
-        }
-
-        .skill-item {
-            background-color: var(--card-bg);
-            border: 1px solid var(--card-border);
-            padding: 1rem;
-            border-radius: 8px;
-            text-align: center;
-            color: var(--text-main);
-            font-weight: 500;
-        }
-
-        .skill-item i {
-            font-size: 1.8rem;
-            color: var(--primary);
-            margin-bottom: 0.5rem;
-            display: block;
-        }
-
-        /* --- PROJETOS --- */
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1.5rem;
-        }
-
-        .project-tags {
-            display: flex;
-            gap: 0.5rem;
-            flex-wrap: wrap;
-            margin: 1rem 0;
-        }
-
-        .tag {
-            font-size: 0.75rem;
-            background-color: rgba(157, 78, 221, 0.2);
-            color: var(--primary-hover);
-            padding: 0.2rem 0.5rem;
-            border-radius: 4px;
-        }
-
-        /* --- CONTATO --- */
-        .contact-container {
-            display: flex;
-            gap: 2rem;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-
-        .contact-item {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            background-color: var(--card-bg);
-            border: 1px solid var(--card-border);
-            padding: 1rem 2rem;
-            border-radius: 8px;
-            color: var(--text-main);
-            text-decoration: none;
-            transition: border-color 0.3s;
-        }
-
-        .contact-item:hover {
-            border-color: var(--primary);
-        }
-
-        .contact-item i {
-            font-size: 1.5rem;
-            color: var(--primary);
-        }
-
-        /* --- FOOTER --- */
-        footer {
-            text-align: center;
-            padding: 2rem;
-            color: var(--text-muted);
-            font-size: 0.9rem;
-            border-top: 1px solid var(--card-border);
-        }
-
-        /* RESPONSIVIDADE */
-        img {
-            max-width: 100%;
-            height: auto;
-        }
-
-        /* --- MEDIA QUERIES (CELULARES E TABLETS) --- */
-        @media (max-width: 768px) {
-            /* Ajuste de cabeçalho e navegação */
-            nav {
-                padding: 1rem;
-                flex-direction: column;
-                gap: 0.8rem;
-            }
-
-            .nav-links {
-                display: flex;
-                flex-wrap: wrap;
-                justify-content: center;
-                gap: 0.8rem;
-            }
-
-            .nav-links a {
-                font-size: 0.85rem;
-            }
-
-            /* Espaçamento das seções no celular */
-            section {
-                padding: 4rem 1rem;
-            }
-
-            .section-title {
-                font-size: 1.6rem;
-            }
-
-            /* Seção Início (Hero) */
-            #inicio {
-                flex-direction: column;
-                text-align: center;
-                padding-top: 7rem;
-                gap: 2rem;
-            }
-
-            .hero-left {
-                width: 100%;
-            }
-
-            .profile-img {
-                width: 200px;
-                height: 200px;
-            }
-
-            .hero-right h1 {
-                font-size: 2.2rem;
-            }
-
-            .hero-right h2 {
-                font-size: 1.2rem;
-            }
-
-            .btn-group {
-                flex-direction: column;
-                width: 100%;
-                gap: 0.8rem;
-            }
-
-            .btn {
-                justify-content: center;
-                width: 100%;
-            }
-
-            /* Cards de Experiência e Outros */
-            .card {
-                padding: 1.2rem;
-            }
-
-            .card-header {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 0.5rem;
-            }
-
-            .card-date {
-                align-self: flex-start;
-            }
-
-            /* Grid de Competências e Projetos */
-            .skills-grid {
-                grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
-                gap: 0.8rem;
-            }
-
-            .projects-grid {
-                grid-template-columns: 1fr;
-            }
-
-            /* Tags de ferramentas */
-            .exp-tools {
-                gap: 0.4rem;
-            }
-
-            .tool-tag {
-                font-size: 0.75rem;
-            }
-
-            /* Seção de Contato */
-            .contact-container {
-                flex-direction: column;
-                width: 100%;
-            }
-
-            .contact-item {
-                width: 100%;
-                justify-content: center;
-            }
-        }
-    </style>
-
-
-
-
-
-
-
-
+    <!-- Arquivo CSS -->
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
     <!-- NAV -->
@@ -536,13 +36,12 @@
         </div>
         <div class="hero-right">
             <h1>Vagner Marques</h1>
-            <h2>Profissional de Dados, Analytics & business intelligence.</h2>
-            <p>Especialista em transformar dados brutos em inteligência de negócios, automação de processos e soluções analíticas.</p>
+            <h2>Profissional de Dados, Analytics & Business Intelligence</h2>
+            <p>Transformando dados brutos em inteligência de negócios, automatizando processos e soluções analíticas.</p>
             <div class="btn-group">
                 <a href="https://github.com/DS-Vagner" target="_blank" class="btn btn-secondary"><i class="fa-brands fa-github"></i> GitHub</a>
                 <a href="https://www.linkedin.com/in/vagnermarques-dados/" target="_blank" class="btn btn-secondary"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
                 <a href="#projetos" class="btn btn-primary"><i class="fa-solid fa-code"></i> Ver Projetos</a>
-
             </div>
         </div>
     </section>
@@ -551,180 +50,264 @@
     <section id="sobre">
         <h2 class="section-title">Sobre Mim</h2>
         <p>
-            <p>
-    Sou profissional em transição de carreira para a área de Dados e Business Intelligence, trazendo mais de 15 anos de sólida experiência em Engenharia, 
-    Infraestrutura Crítica e Orçamentos de alta complexidade em setores como Data Centers, Telecom e Hospitalar.
-</p>
-<p>
-    Minha bagagem em análise de projetos, custos, precificação, curva ABC, BDI e planejamento estratégico me confere uma visão de negócio diferenciada, 
-    compreendo o impacto dos números na prática e no resultado financeiro para tomada de desição, indo além dos dashboards.
-</p>
-<p>
-    Atualmente, uno essa mentalidade analítica de negócios ao domínio técnico em Python, SQL, Power BI, ETL e Machine Learning para transformar dados brutos 
-    em decisões estratégicas e soluções escaláveis.
-</p>
+            Sou profissional em transição de carreira para a área de Dados e Business Intelligence, trazendo mais de 15 anos de sólida experiência em Engenharia, 
+            Infraestrutura Crítica e Orçamentos de alta complexidade em setores como Data Centers, Telecom e Hospitalar.
+        </p>
+        <br>
+        <p>
+            Minha bagagem em análise de projetos, custos, precificação, curva ABC, BDI e planejamento estratégico me confere uma visão de negócio diferenciada, 
+            compreendo o impacto dos números na prática e no resultado financeiro para tomada de decisão, indo além dos dashboards.
+        </p>
+        <br>
+        <p>
+            Atualmente, uno essa mentalidade analítica de negócios ao domínio técnico em Python, SQL, Power BI, ETL e Machine Learning para transformar dados brutos 
+            em decisões estratégicas e soluções escaláveis.
         </p>
     </section>
 
-   <!-- 3. EXPERIÊNCIA -->
-<section id="experiencia">
-    <h2 class="section-title">Experiência Profissional</h2>
-    <div class="timeline">
-        
-        <!-- EXPERIÊNCIA 1: AGEPLAN -->
-        <div class="card">
-            <div class="card-header">
-                <div>
-                    <h3 class="card-title">Orçamentista Sênior</h3>
-                    <span class="card-subtitle">
-                        <a href="https://www.ageplan.com.br" target="_blank" rel="noopener noreferrer" class="company-link">
-                            Ageplan Engenharia e Construções <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 0.75rem;"></i>
-                        </a>
+    <!-- 3. EXPERIÊNCIA -->
+    <section id="experiencia">
+        <h2 class="section-title">Experiência Profissional</h2>
+        <div class="timeline">
+            
+            <!-- 1. AGEPLAN -->
+            <div class="card">
+                <div class="card-header">
+                    <div>
+                        <h3 class="card-title">Orçamentista Sênior</h3>
+                        <span class="card-subtitle">
+                            <a href="https://www.ageplan.com.br" target="_blank" rel="noopener noreferrer" class="company-link">
+                                Ageplan Engenharia e Construções <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 0.75rem;"></i>
+                            </a>
+                        </span>
+                    </div>
+                    <span class="card-date calc-duration" data-start="2021-05" data-end="2025-08">
+                        mai/2021 – ago/2025
                     </span>
                 </div>
-                <span class="card-date calc-duration" data-start="2021-05" data-end="2025-08">
-                    mai/2021 – ago/2025
-                </span>
-            </div>
-
-            <div class="location-info">
-                <i class="fa-solid fa-location-dot"></i> São Paulo, SP
-            </div>
-
-            <!-- Informação sempre visível -->
-            <p>
-                Responsável pela elaboração dos custos e orçamentos para projetos de Data Center, Rádio Base e Industrial...
-            </p>
-            <div class="exp-tools">
+                <div class="location-info">
+                    <i class="fa-solid fa-location-dot"></i> São Paulo, SP
+                </div>
+                <ul class="exp-list">
+                    <li>Responsável pela elaboração dos custos e orçamentos para projetos de Data Center, Rádio Base e Industrial, atuando da análise de projeto, custos até a proposta comercial final.</li>
+                    <li>Estruturei composições de custo unitário, mão de obra e equipamentos em planilhas detalhadas para formação de preço e à margem de projetos de alto valor.</li>
+                    <li>Análise dos dados de cotações, BDI e curva ABC para identificar oportunidades de otimização, avaliar a viabilidade dos projetos e o custo final.</li>
+                    <li>Elaboração de propostas técnicas e comerciais a clientes internos e externos, traduzindo dados e argumentos em escopo, planejamento e custo de negociação.</li>
+                </ul>
+                <div class="exp-tools">
                     <span class="tool-tag">Excel</span>
                     <span class="tool-tag">AutoCAD</span>
+                    <span class="tool-tag">PowerPoint</span>
+                    <span class="tool-tag">MS Project</span>
                     <span class="tool-tag">Power BI</span>
+                </div>
             </div>
 
-            <!-- CONTEÚDO EXPANSÍVEL (Inicia escondido) -->
-            <div class="details-content" style="display: none; margin-top: 1rem;">
+            <!-- 2. CASAS BAHIA -->
+            <div class="card">
+                <div class="card-header">
+                    <div>
+                        <h3 class="card-title">Analista de Custos e Projetos (Orçamentista)</h3>
+                        <span class="card-subtitle">
+                            <a href="https://www.grupocasasbahia.com.br" target="_blank" rel="noopener noreferrer" class="company-link">
+                                Grupo Casas Bahia <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 0.75rem;"></i>
+                            </a>
+                        </span>
+                    </div>
+                    <span class="card-date calc-duration" data-start="2018-05" data-end="2021-05">
+                        mai/2018 – mai/2021
+                    </span>
+                </div>
+                <div class="location-info">
+                    <i class="fa-solid fa-location-dot"></i> São Caetano do Sul, SP
+                </div>
                 <ul class="exp-list">
-                    <li>Estruturei composições de custo unitário, mão de obra e equipamentos...</li>
-                    <li>Análise de dados de cotações, BDI e curva ABC...</li>
-                    <li>Elaboração de propostas técnicas e comerciais...</li>
+                    <li>Analisei projetos arquitetônicos e relatórios de manutenção para equalizar soluções técnicas e comerciais.</li>
+                    <li>Elaborei planilhas quantitativas detalhadas de custos diretos e indiretos, com cálculo de BDI e mão de obra, apoiando decisões de investimento em manutenção e reforma de lojas.</li>
+                    <li>Organizei a curva ABC de materiais e equipamentos, priorizando itens de maior impacto no custo final e reduzindo o tempo de fechamento de orçamentos.</li>
                 </ul>
+                <div class="exp-tools">
+                    <span class="tool-tag">Excel Intermediário</span>
+                    <span class="tool-tag">Curva ABC</span>
+                    <span class="tool-tag">Cálculo de BDI</span>
+                    <span class="tool-tag">AutoCAD</span>
+                    <span class="tool-tag">MS Project</span>
+                </div>
+            </div>
 
+            <!-- 3. EPIME -->
+            <div class="card">
+                <div class="card-header">
+                    <div>
+                        <h3 class="card-title">Orçamentista Pleno</h3>
+                        <span class="card-subtitle">Epime Engenharia Elétrica, Arquitetura e Construções Ltda</span>
+                    </div>
+                    <span class="card-date calc-duration" data-start="2017-08" data-end="2018-05">
+                        ago/2017 – mai/2018
+                    </span>
+                </div>
+                <div class="location-info">
+                    <i class="fa-solid fa-location-dot"></i> São Paulo, SP
+                </div>
+                <ul class="exp-list">
+                    <li>Realizei análise técnica de projetos elétricos, hidráulicos e de combate a incêndio, com levantamento quantitativo e precificação unitária.</li>
+                    <li>Elaborei planilhas orçamentárias detalhadas e mapas de cotação, dando suporte à negociação de prazos e custos com fornecedores.</li>
+                    <li>Estruturei propostas técnicas e comerciais, alinhando escopo, cronograma e condições comerciais para aprovação do cliente.</li>
+                </ul>
+                <div class="exp-tools">
+                    <span class="tool-tag">Excel</span>
+                    <span class="tool-tag">AutoCAD</span>
+                    <span class="tool-tag">Mapas de Cotação</span>
+                </div>
+            </div>
+
+            <!-- 4. SISTENGE -->
+            <div class="card">
+                <div class="card-header">
+                    <div>
+                        <h3 class="card-title">Orçamentista Técnico</h3>
+                        <span class="card-subtitle">Sistenge – Engenharia de Soluções Especiais</span>
+                    </div>
+                    <span class="card-date calc-duration" data-start="2012-10" data-end="2017-04">
+                        out/2012 – abr/2017
+                    </span>
+                </div>
+                <div class="location-info">
+                    <i class="fa-solid fa-location-dot"></i> São Paulo, SP
+                </div>
+                <ul class="exp-list">
+                    <li>Atuei no Departamento de Custos e Orçamentos, da leitura de projetos técnicos ao fechamento de propostas comerciais.</li>
+                    <li>Desenvolvi estimativas de custo e composições unitárias de serviços e equipamentos, consolidando dados em planilhas para controle de custo atualizado.</li>
+                    <li>Apliquei Engenharia de Valores para identificar alternativas de otimização de custo, apoiando negociações com fornecedores e clientes.</li>
+                </ul>
+                <div class="exp-tools">
+                    <span class="tool-tag">Excel</span>
+                    <span class="tool-tag">Composição de Custos</span>
+                    <span class="tool-tag">Engenharia de Valores</span>
+                </div>
+            </div>
+
+            <!-- BLOCO DE DEMAIS EXPERIÊNCIAS (OCULTO INICIALMENTE) -->
+            <div id="demais-experiencias" style="display: none;">
                 
-            </div>
+                <h3 class="old-experiences-title">Demais Experiências Profissionais</h3>
 
-            <!-- BOTÃO PARA EXPANDIR / RECOLHER -->
-            <button onclick="toggleDetails(this)" class="btn-toggle-details">
-                <i class="fa-solid fa-chevron-down"></i> Ver mais detalhes
-            </button>
-        </div>
-
-        <!-- EXPERIÊNCIA 2: GRUPO CASAS BAHIA -->
-        <div class="card">
-            <div class="card-header">
-                <div>
-                    <h3 class="card-title">Analista de Custos e Projetos (Orçamentista)</h3>
-                    <span class="card-subtitle">
-                        <a href="https://www.grupocasasbahia.com.br" target="_blank" rel="noopener noreferrer" class="company-link">
-                            Grupo Casas Bahia <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 0.75rem;"></i>
-                        </a>
-                    </span>
+                <!-- ENERGESP -->
+                <div class="card" style="margin-bottom: 1rem;">
+                    <div class="card-header">
+                        <div>
+                            <h3 class="card-title">Técnico Eletroeletrônico</h3>
+                            <span class="card-subtitle">Energesp Soluções de Energia e Infraestrutura Ltda</span>
+                        </div>
+                        <span class="card-date calc-duration" data-start="2012-05" data-end="2012-09">
+                            mai/2012 – set/2012
+                        </span>
+                    </div>
+                    <div class="location-info">
+                        <i class="fa-solid fa-location-dot"></i> São Paulo, SP
+                    </div>
                 </div>
-                <span class="card-date calc-duration" data-start="2018-05" data-end="2021-05">
-                    mai/2018 – mai/2021
-                </span>
-            </div>
 
-            <div class="location-info">
-                <i class="fa-solid fa-location-dot"></i> São Caetano do Sul, SP
-            </div>
-
-            <ul class="exp-list">
-                <li>Analisei projetos arquitetônicos e relatórios de manutenção para equalizar soluções técnicas e comerciais.</li>
-                <li>Elaborei planilhas quantitativas detalhadas de custos diretos e indiretos, com cálculo de BDI e mão de obra, apoiando decisões de investimento em manutenção e reforma de lojas.</li>
-                <li>Organizei a curva ABC de materiais e equipamentos, priorizando itens de maior impacto no custo final e reduzindo o tempo de fechamento de orçamentos.</li>
-            </ul>
-
-            <div class="exp-tools">
-                <span class="tool-tag">Excel Intermediário</span>
-                <span class="tool-tag">Curva ABC</span>
-                <span class="tool-tag">Cálculo de BDI</span>
-                <span class="tool-tag">AutoCAD</span>
-                <span class="tool-tag">MS Project</span>
-            </div>
-        </div>
-
-        <!-- EXPERIÊNCIA 3: EPIME -->
-        <div class="card">
-            <div class="card-header">
-                <div>
-                    <h3 class="card-title">Orçamentista Pleno</h3>
-                    <span class="card-subtitle">
-                        Epime Engenharia Elétrica, Arquitetura e Construções Ltda
-                    </span>
+                <!-- CEMIELETRICA -->
+                <div class="card" style="margin-bottom: 1rem;">
+                    <div class="card-header">
+                        <div>
+                            <h3 class="card-title">Eletricista Montador</h3>
+                            <span class="card-subtitle">Cemieletrica Instalações Elétricas Ltda</span>
+                        </div>
+                        <span class="card-date calc-duration" data-start="2011-07" data-end="2012-02">
+                            jul/2011 – fev/2012
+                        </span>
+                    </div>
+                    <div class="location-info">
+                        <i class="fa-solid fa-location-dot"></i> São Paulo, SP
+                    </div>
                 </div>
-                <span class="card-date calc-duration" data-start="2017-08" data-end="2018-05">
-                    ago/2017 – mai/2018
-                </span>
-            </div>
 
-            <div class="location-info">
-                <i class="fa-solid fa-location-dot"></i> São Paulo, SP
-            </div>
-
-            <ul class="exp-list">
-                <li>Realizei análise técnica de projetos elétricos, hidráulicos e de combate a incêndio, com levantamento quantitativo e precificação unitária.</li>
-                <li>Elaborei planilhas orçamentárias detalhadas e mapas de cotação, dando suporte à negociação de prazos e custos com fornecedores.</li>
-                <li>Estruturei propostas técnicas e comerciais, alinhando escopo, cronograma e condições comerciais para aprovação do cliente.</li>
-            </ul>
-
-            <div class="exp-tools">
-                <span class="tool-tag">Excel</span>
-                <span class="tool-tag">AutoCAD</span>
-                <span class="tool-tag">Mapas de Cotação</span>
-                <span class="tool-tag">Propostas Comerciais</span>
-            </div>
-        </div>
-
-        <!-- EXPERIÊNCIA 4: SISTENGE -->
-        <div class="card">
-            <div class="card-header">
-                <div>
-                    <h3 class="card-title">Orçamentista Técnico</h3>
-                    <span class="card-subtitle">
-                        Sistenge – Engenharia de Soluções Especiais
-                    </span>
+                <!-- VL INDUSTRIA -->
+                <div class="card" style="margin-bottom: 1rem;">
+                    <div class="card-header">
+                        <div>
+                            <h3 class="card-title">Oficial Eletricista II (Inspetor de Qualidade)</h3>
+                            <span class="card-subtitle">VL Indústria e Comércio Ltda</span>
+                        </div>
+                        <span class="card-date calc-duration" data-start="2009-10" data-end="2010-06">
+                            out/2009 – jun/2010
+                        </span>
+                    </div>
+                    <div class="location-info">
+                        <i class="fa-solid fa-location-dot"></i> São Paulo, SP
+                    </div>
                 </div>
-                <span class="card-date calc-duration" data-start="2012-10" data-end="2017-04">
-                    out/2012 – abr/2017
-                </span>
+
+                <!-- PLUS AUTOMAÇÃO -->
+                <div class="card" style="margin-bottom: 1rem;">
+                    <div class="card-header">
+                        <div>
+                            <h3 class="card-title">Oficial Eletricista Pleno</h3>
+                            <span class="card-subtitle">Plus Automação Ltda</span>
+                        </div>
+                        <span class="card-date calc-duration" data-start="2008-11" data-end="2009-08">
+                            nov/2008 – ago/2009
+                        </span>
+                    </div>
+                    <div class="location-info">
+                        <i class="fa-solid fa-location-dot"></i> São Paulo, SP
+                    </div>
+                </div>
+
+                <!-- PRO PAINEL -->
+                <div class="card" style="margin-bottom: 1rem;">
+                    <div class="card-header">
+                        <div>
+                            <h3 class="card-title">Meio Oficial Montador Eletromecânico</h3>
+                            <span class="card-subtitle">Pro Painel Equipamentos Elétricos Ltda</span>
+                        </div>
+                        <span class="card-date calc-duration" data-start="2004-02" data-end="2008-11">
+                            fev/2004 – nov/2008
+                        </span>
+                    </div>
+                    <div class="location-info">
+                        <i class="fa-solid fa-location-dot"></i> Guarulhos, SP
+                    </div>
+                </div>
+
+                <!-- SHALOM -->
+                <div class="card" style="margin-bottom: 1rem;">
+                    <div class="card-header">
+                        <div>
+                            <h3 class="card-title">Auxiliar de Montagem Eletromecânica</h3>
+                            <span class="card-subtitle">
+                                <a href="https://www.instagram.com/shalomequip/" target="_blank" rel="noopener noreferrer" class="company-link">
+                                    Shalom Equipamentos Elétricos e Comércio Ltda ME <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 0.75rem;"></i>
+                                </a>
+                            </span>
+                        </div>
+                        <span class="card-date calc-duration" data-start="1997-04" data-end="2003-12">
+                            abr/1997 – dez/2003
+                        </span>
+                    </div>
+                    <div class="location-info">
+                        <i class="fa-solid fa-location-dot"></i> São Paulo, SP
+                    </div>
+                </div>
+
+            </div> <!-- FIM DO BLOCO OCULTO -->
+
+            <!-- BOTÃO PARA EXPANDIR AS DEMAIS EXPERIÊNCIAS -->
+            <div class="more-exp-container">
+                <button onclick="toggleMoreExperiences(this)" class="btn-more-exp">
+                    <i class="fa-solid fa-chevron-down"></i> Ver demais experiências profissionais
+                </button>
             </div>
 
-            <div class="location-info">
-                <i class="fa-solid fa-location-dot"></i> São Paulo, SP
-            </div>
-
-            <ul class="exp-list">
-                <li>Atuei no Departamento de Custos e Orçamentos, da leitura de projetos técnicos ao fechamento de propostas comerciais.</li>
-                <li>Desenvolvi estimativas de custo e composições unitárias de serviços e equipamentos, consolidando dados em planilhas para controle de custo atualizado.</li>
-                <li>Apliquei Engenharia de Valores para identificar alternativas de otimização de custo, apoiando negociações com fornecedores e clientes.</li>
-            </ul>
-
-            <div class="exp-tools">
-                <span class="tool-tag">Excel</span>
-                <span class="tool-tag">Composição de Custos</span>
-                <span class="tool-tag">Engenharia de Valores</span>
-                <span class="tool-tag">AutoCAD</span>
-            </div>
         </div>
-
-    </div>
-</section>
+    </section>
 
     <!-- 4. FORMAÇÃO -->
     <section id="formacao">
         <h2 class="section-title">Formação</h2>
         <div class="timeline">
-            
             <div class="card">
                 <div class="card-header">
                     <div>
@@ -734,7 +317,6 @@
                     <span class="card-date">[Ano de Conclusão]</span>
                 </div>
             </div>
-
         </div>
     </section>
 
@@ -742,7 +324,6 @@
     <section id="certificacoes">
         <h2 class="section-title">Certificações</h2>
         <div class="timeline">
-            
             <div class="card">
                 <div class="card-header">
                     <div>
@@ -752,7 +333,6 @@
                     <span class="card-date">[Ano]</span>
                 </div>
             </div>
-
         </div>
     </section>
 
@@ -821,68 +401,8 @@
         <p>&copy; 2026 Vagner Marques. Desenvolvido para apresentar projetos e trajetória em Dados.</p>
     </footer>
 
-<script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const dateElements = document.querySelectorAll('.calc-duration');
-
-            dateElements.forEach(el => {
-                const startStr = el.getAttribute('data-start'); // Formato: "YYYY-MM"
-                const endStr = el.getAttribute('data-end');     // Formato: "YYYY-MM" ou "present"
-
-                if (!startStr) return;
-
-                const [startYear, startMonth] = startStr.split('-').map(Number);
-                let endYear, endMonth;
-
-                if (endStr === 'present' || !endStr) {
-                    const now = new Date();
-                    endYear = now.getFullYear();
-                    endMonth = now.getMonth() + 1; // getMonth() é 0-indexed
-                } else {
-                    [endYear, endMonth] = endStr.split('-').map(Number);
-                }
-
-                // Cálculo total de meses
-                let totalMonths = (endYear - startYear) * 12 + (endMonth - startMonth) + 1;
-
-                if (totalMonths < 1) totalMonths = 1;
-
-                const years = Math.floor(totalMonths / 12);
-                const months = totalMonths % 12;
-
-                let durationStr = '';
-                
-                if (years > 0) {
-                    durationStr += `${years} ${years === 1 ? 'ano' : 'anos'}`;
-                }
-                
-                if (months > 0) {
-                    if (durationStr !== '') durationStr += ' e ';
-                    durationStr += `${months} ${months === 1 ? 'mês' : 'meses'}`;
-                }
-
-                // Anexa a duração calculada ao texto da data existente
-                el.textContent = `${el.textContent.trim()} (${durationStr})`;
-            });
-        });
-
-        function toggleDetails(button) {
-            // Encontra o bloco .details-content mais próximo dentro do mesmo card
-            const card = button.closest('.card');
-            const content = card.querySelector('.details-content');
-
-            if (content.style.display === "none" || content.style.display === "") {
-                content.style.display = "block";
-                button.innerHTML = '<i class="fa-solid fa-chevron-up"></i> Ver menos';
-            } else {
-                content.style.display = "none";
-                button.innerHTML = '<i class="fa-solid fa-chevron-down"></i> Ver mais detalhes';
-            }
-        }   
-        
-    </script>
-</body>
-</html>
+    <!-- ARQUIVO JAVASCRIPT CONECTADO NO LOCAL CORRETO -->
+    <script src="script.js"></script>
 
 </body>
 </html>
