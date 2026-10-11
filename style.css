@@ -95,6 +95,48 @@ section {
     border-radius: 2px;
 }
 
+/* Banner de Status / Em Construção */
+.status-banner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background-color: rgba(157, 78, 221, 0.15); /* Roxo sutil alinhado ao tema */
+    border: 1px solid rgba(157, 78, 221, 0.4);
+    color: #e0aaff;
+    padding: 8px 16px;
+    margin: 80px auto 10px auto; /* Afasta do menu fixo superior */
+    border-radius: 20px;
+    max-width: fit-content;
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+/* Ponto pulsante animado */
+.status-dot {
+    width: 8px;
+    height: 8px;
+    background-color: #00f5d4; /* Verde/Ciano em destaque */
+    border-radius: 50%;
+    box-shadow: 0 0 8px #00f5d4;
+    animation: pulse 1.8s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(0, 245, 212, 0.7);
+    }
+    70% {
+        transform: scale(1);
+        box-shadow: 0 0 0 8px rgba(0, 245, 212, 0);
+    }
+    100% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(0, 245, 212, 0);
+    }
+}
+
 /* --- SEÇÃO INÍCIO --- */
 #inicio {
     min-height: 90vh;
