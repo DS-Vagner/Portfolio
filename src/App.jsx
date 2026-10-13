@@ -6,7 +6,7 @@ import {
 } from 'lucide-react';
 
 const GITHUB = 'https://github.com/DS-Vagner';
-const LINKEDIN = 'https://linkedin.com/in/ds-vagner-marques/';
+const LINKEDIN = 'https://linkedin.com/in/vagnermarques-dados/';
 
 const projects = [
   {
