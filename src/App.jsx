@@ -2,11 +2,11 @@ import React, { useMemo, useState } from 'react';
 import {
   ArrowDown, ArrowRight, ArrowUpRight, BarChart3, BrainCircuit, BriefcaseBusiness,
   Check, ChevronDown, Code2, Database, ExternalLink, Github, Linkedin, Mail,
-  Menu, MessageCircle, Network, Search, Sparkles, X, Zap
+  Menu, MessageCircle, Network, Search, Sparkles, X, Zap, Briefcase
 } from 'lucide-react';
 
 const GITHUB = 'https://github.com/DS-Vagner';
-const LINKEDIN = 'https://linkedin.com/in/vagnermarques-dados/';
+const LINKEDIN = 'https://www.linkedin.com/in/vagnermarques-dados/';
 
 const projects = [
   {
@@ -17,7 +17,7 @@ const projects = [
     tools: ['Power BI', 'Excel', 'Modelagem de dados'],
     problem: 'Como organizar diferentes indicadores em uma visão única e útil para quem precisa decidir?',
     approach: 'Preparação e padronização dos dados, definição de métricas, organização visual por perguntas de negócio e construção de filtros para explorar os resultados.',
-    outcome: 'O projeto deve evidenciar clareza visual, lógica dos indicadores e capacidade de traduzir dados em recomendações. Insira aqui seus dados, capturas e resultados reais.',
+    outcome: 'O projeto deve evidenciar clareza visual, lógica dos indicadores e capacidade de traduzir dados em recomendações.',
     repo: ''
   },
   {
@@ -28,7 +28,7 @@ const projects = [
     tools: ['Python', 'Pandas', 'NumPy', 'Matplotlib'],
     problem: 'Quais padrões, inconsistências e oportunidades podem estar escondidos em uma base de dados?',
     approach: 'Inspeção inicial, tratamento de valores ausentes, análise estatística descritiva, visualizações e registro das principais hipóteses.',
-    outcome: 'Inclua as descobertas obtidas na sua execução, gráficos e conclusões sustentadas pelos dados. Não publique resultados estimados como se fossem reais.',
+    outcome: 'Inclua as descobertas obtidas na sua execução, gráficos e conclusões sustentadas pelos dados.',
     repo: ''
   },
   {
@@ -38,7 +38,7 @@ const projects = [
     description: 'Consultas para responder perguntas de negócio, cruzar tabelas e criar uma base confiável para relatórios e análises.',
     tools: ['SQL', 'CTEs', 'JOINs', 'Agregações'],
     problem: 'Como transformar tabelas relacionais em respostas consistentes para perguntas de negócio?',
-    approach: 'Modelagem básica, consultas com JOIN, filtros, agregações, CTEs e validação dos resultados para evitar contagens duplicadas.',
+    approach: 'Modelagem básica, consultas com JOIN, filtros, agregações, CTEs e validação dos resultados.',
     outcome: 'Adicione o esquema da base, as perguntas respondidas e exemplos de consultas com seus resultados reais.',
     repo: ''
   },
@@ -49,8 +49,8 @@ const projects = [
     description: 'Fluxo de aprendizado de máquina para preparar dados, treinar um modelo e avaliar seu desempenho de forma responsável.',
     tools: ['Python', 'Pandas', 'Scikit-learn', 'Estatística'],
     problem: 'É possível estimar um resultado futuro usando padrões presentes nos dados históricos?',
-    approach: 'Definição da variável-alvo, separação treino/teste, criação de baseline, treinamento, validação e escolha de métricas adequadas ao problema.',
-    outcome: 'Preencha com o conjunto de dados utilizado, métricas calculadas, limitações e cuidados para evitar vazamento de dados.',
+    approach: 'Definição da variável-alvo, separação treino/teste, criação de baseline, treinamento, validação e escolha de métricas adequadas.',
+    outcome: 'Preencha com o conjunto de dados utilizado, métricas calculadas e limitações.',
     repo: ''
   },
   {
@@ -60,8 +60,8 @@ const projects = [
     description: 'Protótipo de fluxo automatizado que combina instruções, ferramentas e dados para executar uma tarefa delimitada.',
     tools: ['Python', 'LangChain', 'APIs', 'Automação'],
     problem: 'Como reduzir tarefas repetitivas mantendo rastreabilidade, controle e validação humana?',
-    approach: 'Definição de escopo, desenho do fluxo, integração com ferramentas, tratamento de erros e avaliação das respostas geradas.',
-    outcome: 'Documente o comportamento esperado, os testes realizados, os limites do agente e as medidas de privacidade adotadas.',
+    approach: 'Definição de escopo, desenho do fluxo, integração com ferramentas e tratamento de erros.',
+    outcome: 'Documente o comportamento esperado, os testes realizados e os limites do agente.',
     repo: ''
   },
   {
@@ -72,7 +72,7 @@ const projects = [
     tools: ['Excel', 'Power BI', 'KPIs', 'Análise de custos'],
     problem: 'Como comparar orçamento, custo realizado e variações para apoiar decisões de gestão?',
     approach: 'Estruturação de dados de orçamento e realizado, classificação de custos, análise de desvios e criação de indicadores por categoria.',
-    outcome: 'Use dados próprios anonimizados ou uma base pública/sintética claramente identificada. Inclua recomendações que possam ser verificadas.',
+    outcome: 'Use dados próprios anonimizados ou uma base pública/sintética claramente identificada.',
     repo: ''
   }
 ];
@@ -82,12 +82,6 @@ const skills = [
   { title: 'Dados & Programação', items: ['Python', 'SQL', 'Pandas', 'Estatística'], icon: Code2 },
   { title: 'IA & Machine Learning', items: ['Fundamentos de ML', 'Modelos preditivos', 'RAG e agentes', 'Engenharia de prompts'], icon: BrainCircuit },
   { title: 'Cloud & Ferramentas', items: ['Fundamentos de Cloud', 'Git e GitHub', 'APIs', 'Automação'], icon: Zap }
-];
-
-const experience = [
-  { year: 'Experiência anterior', title: 'Engenharia, custos e orçamentos', text: 'Mais de 10 anos de experiência em custos, orçamentos e engenharia, com atuação em telecomunicações, construção civil e infraestrutura de missão crítica.' },
-  { year: 'Transição para tecnologia', title: 'Ciência de Dados', text: 'Desenvolvimento de competências em análise de dados, estatística, Python, SQL, visualização e inteligência artificial.' },
-  { year: 'Aprendizado contínuo', title: 'IA, automação e cloud', text: 'Estudos e projetos práticos para entender como dados e automação podem resolver problemas reais de negócio.' }
 ];
 
 function App() {
@@ -109,6 +103,7 @@ function App() {
     <div className="site-shell">
       <div className="ambient ambient-one" aria-hidden="true" />
       <div className="ambient ambient-two" aria-hidden="true" />
+      
       <header className="topbar">
         <a className="brand" href="#inicio" aria-label="Vagner Marques, início">
           <span className="brand-mark">VM<span>.</span></span>
@@ -126,17 +121,24 @@ function App() {
       </header>
 
       <main>
+        {/* HERO SECTION */}
         <section className="hero section-wrap" id="inicio">
           <div className="hero-copy">
-            <div className="availability"><span className="status-dot" /> EM CONSTRUÇÃO CONTÍNUA <span className="availability-divider">/</span> DADOS & IA</div>
+            <div className="availability">
+              <span className="status-dot" /> EM CONSTRUÇÃO CONTÍNUA <span className="availability-divider">/</span> DADOS & IA
+            </div>
             <h1>Transformando <span className="gradient-text">dados</span><br />em decisões.</h1>
-            <p className="hero-lead">Sou Vagner Marques. Uno minha experiência em engenharia e custos à Ciência de Dados para investigar problemas, encontrar padrões e transformar análises em decisões melhores.</p>
+            <p className="hero-lead">
+              Sou Vagner Marques. Uno minha experiência em engenharia e custos à Ciência de Dados para investigar problemas, encontrar padrões e transformar análises em decisões melhores.
+            </p>
             <div className="hero-actions">
               <a className="button button-primary" href="#projetos">Explorar projetos <ArrowRight size={17} /></a>
               <a className="button button-ghost" href={GITHUB} target="_blank" rel="noreferrer"><Github size={17} /> Meu GitHub <ArrowUpRight size={15} /></a>
             </div>
             <div className="hero-footnote"><span className="tiny-line" /> Curiosidade analítica. Visão de negócio. Aprendizado constante.</div>
           </div>
+
+          {/* PAINEL VISUAL ILUSTRATIVO DE DADOS */}
           <div className="hero-visual" aria-label="Ilustração abstrata de dados">
             <div className="visual-orbit orbit-a" />
             <div className="visual-orbit orbit-b" />
@@ -145,21 +147,39 @@ function App() {
             <div className="floating-chip chip-python"><span className="chip-dot purple" /> Python</div>
             <div className="floating-chip chip-sql"><span className="chip-dot blue" /> SQL</div>
             <div className="floating-chip chip-ai"><Sparkles size={14} /> IA / ML</div>
+            
             <div className="data-panel">
-              <div className="panel-top"><span><i /> <i /> <i /></span><small>DATA EXPLORER / 01</small><span className="panel-menu">···</span></div>
+              <div className="panel-top">
+                <span><i /><i /><i /></span>
+                <small>DATA EXPLORER / 01</small>
+                <span className="panel-menu">···</span>
+              </div>
               <div className="panel-label">PADRÕES ENCONTRADOS</div>
-              <div className="panel-main"><span className="panel-number">01</span><span className="panel-caption">pergunta<br />bem definida</span></div>
-              <div className="chart-bars" aria-hidden="true">{[32, 48, 39, 66, 54, 82, 61, 94, 72, 100, 79, 88].map((h, i) => <span key={i} style={{ height: `${h}%` }} />)}</div>
-              <div className="panel-bottom"><span><span className="legend-dot" /> dados</span><span>análise → insight</span></div>
+              <div className="panel-main">
+                <span className="panel-number">01</span>
+                <span className="panel-caption">pergunta<br />bem definida</span>
+              </div>
+              <div className="chart-bars" aria-hidden="true">
+                {[32, 48, 39, 66, 54, 82, 61, 94, 72, 100, 79, 88].map((h, i) => (
+                  <span key={i} style={{ height: `${h}%` }} />
+                ))}
+              </div>
+              <div className="panel-bottom">
+                <span><span className="legend-dot" /> dados</span>
+                <span>análise → insight</span>
+              </div>
             </div>
+
             <div className="orbit-node node-one"><Database size={17} /></div>
             <div className="orbit-node node-two"><BrainCircuit size={17} /></div>
             <div className="orbit-node node-three"><BarChart3 size={17} /></div>
             <div className="visual-caption">DO DADO AO INSIGHT <ArrowDown size={13} /></div>
           </div>
+
           <a href="#sobre" className="scroll-cue"><span /> Role para explorar <ChevronDown size={14} /></a>
         </section>
 
+        {/* FAIXA DE DESTAQUE */}
         <section className="intro-strip">
           <div className="section-wrap strip-inner">
             <span className="strip-label">MEU FOCO</span>
@@ -170,6 +190,7 @@ function App() {
           </div>
         </section>
 
+        {/* SOBRE MIM */}
         <section className="section-wrap section-block about-section" id="sobre">
           <div className="section-heading">
             <div><span className="eyebrow">01 / SOBRE MIM</span><h2>Uma trajetória que conecta <span className="gradient-text">negócio e tecnologia.</span></h2></div>
@@ -197,63 +218,126 @@ function App() {
           </div>
         </section>
 
+        {/* PROJETOS */}
         <section className="section-wrap section-block projects-section" id="projetos">
           <div className="section-heading">
             <div><span className="eyebrow">02 / PROJETOS</span><h2>Aprendizado que vira <span className="gradient-text">prática.</span></h2></div>
             <p>Explore estudos e projetos em análise de dados, BI, programação e IA.</p>
           </div>
-          <div className="projects-notice"><Sparkles size={17} /><span><strong>Estrutura inicial:</strong> os cards abaixo são modelos demonstrativos para personalizar. Adicione seus repositórios, evidências e resultados reais antes de divulgar cada projeto como concluído.</span></div>
+
           <div className="project-controls">
             <div className="filter-list" role="group" aria-label="Filtrar projetos">
-              {filters.map(filter => <button key={filter} className={activeFilter === filter ? 'filter-chip active' : 'filter-chip'} onClick={() => setActiveFilter(filter)}>{filter}</button>)}
+              {filters.map(filter => (
+                <button key={filter} className={activeFilter === filter ? 'filter-chip active' : 'filter-chip'} onClick={() => setActiveFilter(filter)}>{filter}</button>
+              ))}
             </div>
-            <label className="search-box"><Search size={16} /><input value={query} onChange={e => setQuery(e.target.value)} placeholder="Buscar projeto..." aria-label="Buscar projeto" />{query && <button onClick={() => setQuery('')} aria-label="Limpar busca"><X size={14} /></button>}</label>
+            <label className="search-box">
+              <Search size={16} />
+              <input value={query} onChange={e => setQuery(e.target.value)} placeholder="Buscar projeto..." aria-label="Buscar projeto" />
+              {query && <button onClick={() => setQuery('')} aria-label="Limpar busca"><X size={14} /></button>}
+            </label>
           </div>
+
           <div className="project-grid">
             {filteredProjects.map(project => {
               const Icon = project.icon;
-              return <article className="project-card" key={project.id}>
-                <div className="project-card-top"><span className="project-number">{project.number} / CASE</span><span className="project-icon"><Icon size={20} /></span></div>
-                <div className="project-art" aria-hidden="true"><div className="art-grid" /><div className={`art-shape shape-${project.id}`} /><span className="art-orb orb-left" /><span className="art-orb orb-right" /></div>
-                <div className="project-body"><span className="project-category">{project.category}</span><h3>{project.title}</h3><p className="project-subtitle">{project.subtitle}</p><p className="project-description">{project.description}</p>
-                  <div className="tag-list">{project.tools.slice(0, 3).map(tool => <span key={tool}>{tool}</span>)}</div>
-                  <button className="project-open" onClick={() => setSelectedProject(project)}>Ver detalhes <ArrowUpRight size={16} /></button>
-                </div>
-              </article>;
+              return (
+                <article className="project-card" key={project.id}>
+                  <div className="project-card-top">
+                    <span className="project-number">{project.number} / CASE</span>
+                    <span className="project-icon"><Icon size={20} /></span>
+                  </div>
+                  <div className="project-art" aria-hidden="true">
+                    <div className="art-grid" />
+                    <div className={`art-shape shape-${project.id}`} />
+                    <span className="art-orb orb-left" />
+                    <span className="art-orb orb-right" />
+                  </div>
+                  <div className="project-body">
+                    <span className="project-category">{project.category}</span>
+                    <h3>{project.title}</h3>
+                    <p className="project-subtitle">{project.subtitle}</p>
+                    <p className="project-description">{project.description}</p>
+                    <div className="tag-list">
+                      {project.tools.slice(0, 3).map(tool => <span key={tool}>{tool}</span>)}
+                    </div>
+                    <button className="project-open" onClick={() => setSelectedProject(project)}>Ver detalhes <ArrowUpRight size={16} /></button>
+                  </div>
+                </article>
+              );
             })}
           </div>
+
           {filteredProjects.length === 0 && <div className="empty-state">Nenhum projeto encontrado. Tente outro termo ou categoria.</div>}
-          <div className="projects-footer"><span>Mais projetos serão adicionados conforme forem desenvolvidos.</span><a href={GITHUB} target="_blank" rel="noreferrer">Visitar GitHub <ExternalLink size={14} /></a></div>
+          
+          <div className="projects-footer">
+            <span>Mais projetos serão adicionados conforme forem desenvolvidos.</span>
+            <a href={GITHUB} target="_blank" rel="noreferrer">Visitar GitHub <ExternalLink size={14} /></a>
+          </div>
         </section>
 
+        {/* TECNOLOGIAS */}
         <section className="skills-band" id="tecnologias">
           <div className="section-wrap section-block">
             <div className="section-heading">
               <div><span className="eyebrow">03 / TECNOLOGIAS</span><h2>Ferramentas para <span className="gradient-text">investigar e construir.</span></h2></div>
-              <p>Uma visão organizada das áreas que fazem parte da minha jornada. A lista deve refletir o nível real de domínio em cada ferramenta.</p>
+              <p>Uma visão organizada das áreas que fazem parte da minha jornada.</p>
             </div>
             <div className="skills-grid">
-              {skills.map((skill, index) => { const Icon = skill.icon; return <div className="skill-card" key={skill.title}>
-                <div className="skill-card-head"><span className="skill-icon"><Icon size={20} /></span><span className="skill-index">0{index + 1}</span></div>
-                <h3>{skill.title}</h3><div className="skill-items">{skill.items.map(item => <span key={item}><Check size={13} />{item}</span>)}</div>
-              </div>; })}
+              {skills.map((skill, index) => {
+                const Icon = skill.icon;
+                return (
+                  <div className="skill-card" key={skill.title}>
+                    <div className="skill-card-head">
+                      <span className="skill-icon"><Icon size={20} /></span>
+                      <span className="skill-index">0{index + 1}</span>
+                    </div>
+                    <h3>{skill.title}</h3>
+                    <div className="skill-items">
+                      {skill.items.map(item => <span key={item}><Check size={13} />{item}</span>)}
+                    </div>
+                  </div>
+                );
+              })}
             </div>
             <p className="skills-footnote"><span className="status-dot" /> Perfil em evolução: conhecimentos e ferramentas serão atualizados conforme projetos e estudos avançarem.</p>
           </div>
         </section>
 
+        {/* TRAJETÓRIA COM CARD REDIRECIONANDO PARA LINKEDIN */}
         <section className="section-wrap section-block journey-section" id="trajetoria">
           <div className="section-heading">
             <div><span className="eyebrow">04 / TRAJETÓRIA</span><h2>Experiência que se transforma em <span className="gradient-text">perspectiva.</span></h2></div>
-            <p>Uma transição construída com intenção: aproveitar o que já sei e desenvolver novas competências.</p>
+            <p>Uma transição construída com intenção: aproveitar o conhecimento em custos e negócios para a Ciência de Dados.</p>
           </div>
-          <div className="timeline">{experience.map((item, i) => <div className="timeline-item" key={item.title}>
-            <div className="timeline-marker"><span>{String(i + 1).padStart(2, '0')}</span></div>
-            <div className="timeline-content"><span className="timeline-year">{item.year}</span><h3>{item.title}</h3><p>{item.text}</p></div>
-          </div>)}</div>
-          <div className="education-card"><div className="education-icon"><BrainCircuit size={22} /></div><div><span className="eyebrow">FORMAÇÃO ATUAL</span><h3>Ciência de Dados</h3><p>Formação acadêmica em andamento e aprendizado contínuo em análise de dados, programação e IA. Inclua aqui a instituição, previsão de conclusão e certificações relevantes.</p></div><span className="education-badge">EM ANDAMENTO</span></div>
+
+          {/* CARD DE DESTAQUE PARA O LINKEDIN */}
+          <div className="education-card" style={{ marginBottom: '32px', background: 'linear-gradient(135deg, rgba(35, 27, 64, 0.95), rgba(10, 102, 194, 0.18))', border: '1px solid rgba(10, 102, 194, 0.4)' }}>
+            <div className="education-icon" style={{ background: 'rgba(10, 102, 194, 0.2)', color: '#3a86ff' }}>
+              <Briefcase size={22} />
+            </div>
+            <div>
+              <span className="eyebrow" style={{ color: '#3a86ff' }}>HISTÓRICO EXECUTIVO COMPLETO</span>
+              <h3>Mais de 15 anos em Engenharia, Orçamentos & Custos</h3>
+              <p>Para consultar detalhes de empresas, cargos e realizações na minha trajetória profissional, visite meu perfil oficial no LinkedIn.</p>
+            </div>
+            <a href={LINKEDIN} target="_blank" rel="noreferrer" className="button button-primary" style={{ background: '#0a66c2', border: 'none', textDecoration: 'none' }}>
+              <Linkedin size={16} /> Ver no LinkedIn <ArrowUpRight size={14} />
+            </a>
+          </div>
+
+          <div className="education-card">
+            <div className="education-icon"><BrainCircuit size={22} /></div>
+            <div>
+              <span className="eyebrow">FORMAÇÃO ATUAL</span>
+              <h3>Ciência de Dados & Analytics</h3>
+              <p>Formação contínua e aprendizado prático em análise de dados, estatística, Python, SQL, BI e inteligência artificial.</p>
+            </div>
+            <span className="education-badge">EM ANDAMENTO</span>
+          </div>
         </section>
 
+        {/* CONTATO */}
         <section className="contact-section" id="contato">
           <div className="contact-glow" />
           <div className="section-wrap contact-inner">
@@ -264,7 +348,10 @@ function App() {
               <a className="button button-primary" href={LINKEDIN} target="_blank" rel="noreferrer"><Linkedin size={17} /> Conectar no LinkedIn <ArrowUpRight size={15} /></a>
               <a className="button button-ghost" href={GITHUB} target="_blank" rel="noreferrer"><Github size={17} /> Explorar GitHub <ArrowUpRight size={15} /></a>
             </div>
-            <div className="contact-links"><span><Mail size={15} /> Entre em contato pelo LinkedIn</span><span><MessageCircle size={15} /> Aberto a novas conexões</span></div>
+            <div className="contact-links">
+              <span><Mail size={15} /> vagner.vmarques@gmail.com</span>
+              <span><MessageCircle size={15} /> Aberto a novas conexões</span>
+            </div>
           </div>
         </section>
       </main>
@@ -276,20 +363,28 @@ function App() {
         <small className="copyright">© {new Date().getFullYear()} Vagner Marques</small>
       </footer>
 
-      {selectedProject && <div className="modal-backdrop" role="presentation" onMouseDown={e => { if (e.target === e.currentTarget) setSelectedProject(null); }}>
-        <section className="project-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
-          <button className="modal-close" onClick={() => setSelectedProject(null)} aria-label="Fechar detalhes"><X size={20} /></button>
-          <span className="eyebrow">PROJETO / {selectedProject.number}</span>
-          <span className="modal-category">{selectedProject.category}</span>
-          <h2 id="modal-title">{selectedProject.title}</h2><p className="modal-subtitle">{selectedProject.subtitle}</p>
-          <p className="modal-description">{selectedProject.description}</p>
-          <div className="modal-detail"><h3>Problema</h3><p>{selectedProject.problem}</p></div>
-          <div className="modal-detail"><h3>Abordagem</h3><p>{selectedProject.approach}</p></div>
-          <div className="modal-detail"><h3>O que documentar</h3><p>{selectedProject.outcome}</p></div>
-          <div className="tag-list modal-tags">{selectedProject.tools.map(tool => <span key={tool}>{tool}</span>)}</div>
-          {selectedProject.repo ? <a className="button button-primary modal-repo" href={selectedProject.repo} target="_blank" rel="noreferrer"><Github size={17} /> Ver repositório <ArrowUpRight size={15} /></a> : <div className="repo-placeholder"><Github size={16} /><span>Adicione o link do repositório quando o projeto estiver publicado.</span></div>}
-        </section>
-      </div>}
+      {/* MODAL PARA DETALHES DO PROJETO */}
+      {selectedProject && (
+        <div className="modal-backdrop" role="presentation" onMouseDown={e => { if (e.target === e.currentTarget) setSelectedProject(null); }}>
+          <section className="project-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+            <button className="modal-close" onClick={() => setSelectedProject(null)} aria-label="Fechar detalhes"><X size={20} /></button>
+            <span className="eyebrow">PROJETO / {selectedProject.number}</span>
+            <span className="modal-category">{selectedProject.category}</span>
+            <h2 id="modal-title">{selectedProject.title}</h2>
+            <p className="modal-subtitle">{selectedProject.subtitle}</p>
+            <p className="modal-description">{selectedProject.description}</p>
+            <div className="modal-detail"><h3>Problema</h3><p>{selectedProject.problem}</p></div>
+            <div className="modal-detail"><h3>Abordagem</h3><p>{selectedProject.approach}</p></div>
+            <div className="modal-detail"><h3>O que documentar</h3><p>{selectedProject.outcome}</p></div>
+            <div className="tag-list modal-tags">{selectedProject.tools.map(tool => <span key={tool}>{tool}</span>)}</div>
+            {selectedProject.repo ? (
+              <a className="button button-primary modal-repo" href={selectedProject.repo} target="_blank" rel="noreferrer"><Github size={17} /> Ver repositório <ArrowUpRight size={15} /></a>
+            ) : (
+              <div className="repo-placeholder"><Github size={16} /><span>Adicione o link do repositório quando o projeto estiver publicado.</span></div>
+            )}
+          </section>
+        </div>
+      )}
     </div>
   );
 }
