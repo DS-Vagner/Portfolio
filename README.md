@@ -1,33 +1,80 @@
-# 🚀 Portfólio Profissional | Data & Business Intelligence
+# Portfólio de Ciência de Dados — Vagner Marques
 
-Bem-vindo ao repositório do meu portfólio pessoal! Este projeto foi desenvolvido para apresentar minha trajetória profissional, competências técnicas e cases práticos em **Análise de Dados, Business Intelligence e Ciência de Dados**.
+Projeto independente de portfólio, feito com React + Vite e CSS próprio. A identidade visual usa fundo escuro e degradês roxo, lilás e azul royal.
 
-🌐 **Acesse o portfólio online:que está em construção** [vagnermarques-dados.vercel.app](https://vagnermarques-dados.vercel.app/)
+> Este projeto é uma nova versão separada. Ele não altera seu portfólio atual nem o repositório original.
 
----
+## Requisitos
 
-## 🛠️ Tecnologias Utilizadas
+- Node.js em versão LTS (recomendado: 20 ou mais recente)
+- VS Code
+- Conexão com a internet na primeira instalação das dependências
 
-- **Frontend:** HTML5, CSS3 (Design Responsivo, Flexbox, Grid), JavaScript (Vanilla)
-- **Hospedagem & CI/CD:** Vercel integrada ao GitHub
-- **Ferramentas de Análise (Projetos em Destaque):** Power BI, SQL, Python, Excel Avançado, LangChain/IA
+## Como abrir e executar no VS Code
 
----
+1. Extraia o ZIP em uma pasta do seu computador.
+2. Abra o VS Code.
+3. Selecione **Arquivo → Abrir Pasta** e escolha a pasta `portfolio-ciencia-dados`.
+4. No menu do VS Code, abra **Terminal → Novo Terminal**.
+5. Execute os comandos abaixo, um por vez:
 
-## 📌 Destaques do Projeto
+```bash
+npm install
+npm run dev
+```
 
-- 📱 **100% Responsivo:** Adaptado para navegação fluida em telas mobile e desktop.
-- ⚡ **Cálculo Dinâmico de Experiência:** Script em JavaScript para cálculo automático do tempo de atuação nas experiências profissionais.
-- 🎯 **Foco em Negócios:** Migração de área sem abdicar dos 15+ anos de experiência em Engenharia e Gestão Financeira com Soluções de Dados e Planejamento estratégico para tomada de decisão.
+6. O terminal exibirá um endereço local, normalmente `http://localhost:5173`. Pressione `Ctrl` e clique no endereço ou copie-o para o navegador.
+7. Para parar o servidor, volte ao terminal e pressione `Ctrl + C`.
 
----
+## Verificar se o projeto compila para publicação
 
-## 📬 Contato
+```bash
+npm run build
+```
 
-- **LinkedIn:** [Vagner Marques](https://www.linkedin.com/in/vagnermarques-dados/)
-- **GitHub:** [@DS-Vagner](https://github.com/DS-Vagner)
-- **E-mail:** [vagner.vmarques@gmail.com](mailto:vagner.vmarques@gmail.com)
+O Vite gera a versão de publicação na pasta `dist`.
 
----
+## Personalizações importantes
 
-*✨ Este projeto está em constante evolução à medida que novos estudos e projetos de dados são concluídos.*
+### Links
+No arquivo `src/App.jsx`, procure as constantes `GITHUB` e `LINKEDIN` no começo do arquivo. Atualize os endereços caso necessário.
+
+### Projetos
+Os cards estão no array `projects`, no começo de `src/App.jsx`. Os seis cards iniciais são **modelos demonstrativos**, não afirmações de que esses projetos já foram concluídos. Antes de divulgar:
+- atualize título e descrição;
+- inclua os links reais de cada repositório no campo `repo`;
+- troque a abordagem e os resultados por aquilo que você realmente implementou;
+- adicione imagens ou capturas de tela próprias, se houver.
+
+### Formação
+A seção de formação é um texto inicial editável. Acrescente instituição, semestre e cursos conforme desejar.
+
+### Tecnologias
+A lista inicial é uma estrutura para personalizar. Ajuste os itens para que representem seu nível real de conhecimento.
+
+## Estrutura
+
+```text
+portfolio-ciencia-dados/
+├── public/
+├── src/
+│   ├── App.jsx
+│   ├── main.jsx
+│   └── styles.css
+├── index.html
+├── package.json
+└── README.md
+```
+
+## Tecnologias utilizadas
+
+- React
+- Vite
+- CSS responsivo
+- Lucide React (ícones)
+
+O projeto não precisa de banco de dados nem de chaves de API para funcionar.
+
+## Publicação futura
+
+Depois de testar localmente, o projeto pode ser enviado a um **novo repositório** no GitHub e publicado em um **novo projeto** na Vercel. Não é necessário substituir nem modificar o site atual.
