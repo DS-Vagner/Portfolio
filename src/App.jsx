@@ -138,43 +138,35 @@ function App() {
             <div className="hero-footnote"><span className="tiny-line" /> Curiosidade analítica. Visão de negócio. Aprendizado constante.</div>
           </div>
 
-          {/* PAINEL VISUAL ILUSTRATIVO DE DADOS */}
-          <div className="hero-visual" aria-label="Ilustração abstrata de dados">
+          
+          {/* PAINEL VISUAL DA FOTO DE PERFIL */}
+          <div className="hero-visual" aria-label="Foto de perfil de Vagner Marques">
             <div className="visual-orbit orbit-a" />
             <div className="visual-orbit orbit-b" />
             <div className="visual-glow" />
             <div className="visual-grid" />
+            
+            {/* Chips Flutuantes */}
             <div className="floating-chip chip-python"><span className="chip-dot purple" /> Python</div>
             <div className="floating-chip chip-sql"><span className="chip-dot blue" /> SQL</div>
             <div className="floating-chip chip-ai"><Sparkles size={14} /> IA / ML</div>
             
-            <div className="data-panel">
-              <div className="panel-top">
-                <span><i /><i /><i /></span>
-                <small>DATA EXPLORER / 01</small>
-                <span className="panel-menu">···</span>
-              </div>
-              <div className="panel-label">PADRÕES ENCONTRADOS</div>
-              <div className="panel-main">
-                <span className="panel-number">01</span>
-                <span className="panel-caption">pergunta<br />bem definida</span>
-              </div>
-              <div className="chart-bars" aria-hidden="true">
-                {[32, 48, 39, 66, 54, 82, 61, 94, 72, 100, 79, 88].map((h, i) => (
-                  <span key={i} style={{ height: `${h}%` }} />
-                ))}
-              </div>
-              <div className="panel-bottom">
-                <span><span className="legend-dot" /> dados</span>
-                <span>análise → insight</span>
-              </div>
+            {/* Foto de Perfil em Formato de Card Arredondado */}
+            <div className="photo-panel">
+              <img 
+                src="/minha-foto.jpg" 
+                alt="Vagner Marques" 
+                className="hero-photo-img" 
+              />
             </div>
 
+            {/* Ícones nas Órbitas */}
             <div className="orbit-node node-one"><Database size={17} /></div>
             <div className="orbit-node node-two"><BrainCircuit size={17} /></div>
             <div className="orbit-node node-three"><BarChart3 size={17} /></div>
             <div className="visual-caption">DO DADO AO INSIGHT <ArrowDown size={13} /></div>
           </div>
+
 
           <a href="#sobre" className="scroll-cue"><span /> Role para explorar <ChevronDown size={14} /></a>
         </section>
