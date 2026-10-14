@@ -297,20 +297,24 @@ function App() {
         </section>
 
         {/* TRAJETÓRIA COM CARD REDIRECIONANDO PARA LINKEDIN */}
+{/* TRAJETÓRIA & FORMAÇÃO */}
         <section className="section-wrap section-block journey-section" id="trajetoria">
           <div className="section-heading">
-            <div><span className="eyebrow">04 / TRAJETÓRIA</span><h2>Experiência que se transforma em <span className="gradient-text">perspectiva.</span></h2></div>
-            <p>Uma transição construída com intenção: aproveitar o conhecimento em custos e negócios para a Ciência de Dados.</p>
+            <div>
+              <span className="eyebrow">04 / TRAJETÓRIA & FORMAÇÃO</span>
+              <h2>Experiência que se transforma em <span className="gradient-text">perspectiva.</span></h2>
+            </div>
+            <p>Uma transição construída com intenção: conectar bagagem executiva e sólida formação em tecnologia.</p>
           </div>
 
           {/* CARD DE DESTAQUE PARA O LINKEDIN */}
-          <div className="education-card" style={{ marginBottom: '32px', background: 'linear-gradient(135deg, rgba(35, 27, 64, 0.95), rgba(10, 102, 194, 0.18))', border: '1px solid rgba(10, 102, 194, 0.4)' }}>
+          <div className="education-card" style={{ marginBottom: '24px', background: 'linear-gradient(135deg, rgba(35, 27, 64, 0.95), rgba(10, 102, 194, 0.18))', border: '1px solid rgba(10, 102, 194, 0.4)' }}>
             <div className="education-icon" style={{ background: 'rgba(10, 102, 194, 0.2)', color: '#3a86ff' }}>
               <Briefcase size={22} />
             </div>
             <div>
               <span className="eyebrow" style={{ color: '#3a86ff' }}>HISTÓRICO EXECUTIVO COMPLETO</span>
-              <h3>Mais de 15 anos em Engenharia, Orçamentos & Custos</h3>
+              <h3>Mais de 15 anos em Planejamento de custos para Engenharia de Missão Crítica e Orçamentos</h3>
               <p>Para consultar detalhes de empresas, cargos e realizações na minha trajetória profissional, visite meu perfil oficial no LinkedIn.</p>
             </div>
             <a href={LINKEDIN} target="_blank" rel="noreferrer" className="button button-primary" style={{ background: '#0a66c2', border: 'none', textDecoration: 'none' }}>
@@ -318,15 +322,40 @@ function App() {
             </a>
           </div>
 
-          <div className="education-card">
-            <div className="education-icon"><BrainCircuit size={22} /></div>
-            <div>
-              <span className="eyebrow">FORMAÇÃO ATUAL</span>
-              <h3>Ciência de Dados & Analytics</h3>
-              <p>Formação contínua e aprendizado prático em análise de dados, estatística, Python, SQL, BI e inteligência artificial.</p>
+          {/* FORMAÇÃO 1: CIÊNCIA DE DADOS */}
+          <div className="education-card" style={{ marginBottom: '16px' }}>
+            <div className="education-icon">
+              <BrainCircuit size={22} />
             </div>
-            <span className="education-badge">EM ANDAMENTO</span>
+            <div style={{ flex: 1 }}>
+              <span className="eyebrow">GRADUAÇÃO</span>
+              <h3>Ciência de Dados</h3>
+              <p style={{ fontWeight: '600', color: '#c4b2ff', margin: '4px 0 8px 0' }}>
+                🏛️ [UNIVESP]
+              </p>
+              <p>Formação focada em análise estatística, inteligência artificial, modelagem preditiva, Python, SQL e suporte à tomada de decisão.</p>
+            </div>
+            <span className="education-badge">CURSANDO</span>
           </div>
+
+          {/* FORMAÇÃO 2: CIÊNCIA DA COMPUTAÇÃO */}
+          <div className="education-card">
+            <div className="education-icon" style={{ background: 'rgba(58, 134, 255, 0.1)', color: '#3a86ff' }}>
+              <Code2 size={22} />
+            </div>
+            <div style={{ flex: 1 }}>
+              <span className="eyebrow" style={{ color: '#3a86ff' }}>GRADUAÇÃO</span>
+              <h3>Ciência da Computação</h3>
+              <p style={{ fontWeight: '600', color: '#83baff', margin: '4px 0 8px 0' }}>
+                🏛️ [FAM]
+              </p>
+              <p>Base sólida em algoritmos, estrutura de dados, engenharia de software, arquitetura de computadores e bancos de dados relacionais.</p>
+            </div>
+            <span className="education-badge" style={{ borderColor: 'rgba(58, 134, 255, 0.3)', color: '#83baff' }}>
+              CURSANDO
+            </span>
+          </div>
+
         </section>
 
         {/* CONTATO */}
