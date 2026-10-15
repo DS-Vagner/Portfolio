@@ -1,80 +1,55 @@
-# Portfólio de Ciência de Dados — Vagner Marques
+# 🚀 Portfólio Profissional de Ciência de Dados, BI & Analytics
 
-Projeto independente de portfólio, feito com React + Vite e CSS próprio. A identidade visual usa fundo escuro e degradês roxo, lilás e azul royal.
+![React](https://img.shields.io/badge/React-18-61DAFB?style=for-the-badge&logo=react&logoColor=black)
+![Vite](https://img.shields.io/badge/Vite-6.0-646CFF?style=for-the-badge&logo=vite&logoColor=white)
+![CSS3](https://img.shields.io/badge/CSS3-Modular-1572B6?style=for-the-badge&logo=css3&logoColor=white)
+![Vercel](https://img.shields.io/badge/Vercel-CI%2FCD-000000?style=for-the-badge&logo=vercel&logoColor=white)
 
-> Este projeto é uma nova versão separada. Ele não altera seu portfólio atual nem o repositório original.
+Portfólio interativo desenvolvido com **React 18 e Vite**, projetado para apresentar cases práticos, habilidades técnicas e projetos focados em **Ciência de Dados, Business Intelligence, Python, SQL e Inteligência Artificial**.
 
-## Requisitos
+🌐 **Acesse a aplicação online:** [vagnermarques-dados.vercel.app](https://vagnermarques-dados.vercel.app/)
 
-- Node.js em versão LTS (recomendado: 20 ou mais recente)
-- VS Code
-- Conexão com a internet na primeira instalação das dependências
+---
 
-## Como abrir e executar no VS Code
+## 🎯 Proposta & Estratégia de Apresentação
 
-1. Extraia o ZIP em uma pasta do seu computador.
-2. Abra o VS Code.
-3. Selecione **Arquivo → Abrir Pasta** e escolha a pasta `portfolio-ciencia-dados`.
-4. No menu do VS Code, abra **Terminal → Novo Terminal**.
-5. Execute os comandos abaixo, um por vez:
+O portfólio adota uma abordagem **business-first**, priorizando o impacto dos dados na tomada de decisão e na resolução de problemas reais de negócios:
 
-```bash
-npm install
-npm run dev
-```
+* **Hero Section Interativa:** Apresentação executiva integrada a elementos flutuantes e moldura personalizada para o perfil.
+* **Redirecionamento Estratégico (LinkedIn CTA):** Histórico de mais de 15 anos de atuação profissional em Engenharia de Custos e Orçamentos centralizado diretamente no perfil oficial do LinkedIn.
+* **Showcase de Projetos com Modais:** Filtros interativos e modais explicativos com problema de negócio, abordagem analítica e ferramentas utilizadas.
+* **Trajetória & Formação Dupla:** Apresentação das graduações em **Ciência de Dados** e **Ciência da Computação**.
 
-6. O terminal exibirá um endereço local, normalmente `http://localhost:5173`. Pressione `Ctrl` e clique no endereço ou copie-o para o navegador.
-7. Para parar o servidor, volte ao terminal e pressione `Ctrl + C`.
+---
 
-## Verificar se o projeto compila para publicação
+## 🛠️ Tecnologias & Ferramentas Utilizadas
 
-```bash
-npm run build
-```
+### Front-end & Deploy
+* **React 18** (Arquitetura orientada a componentes funcionais e hooks)
+* **Vite** (Build tool ultrarrápido)
+* **Lucide React** (Ícones vetoriais modernos)
+* **CSS3 Custom Properties** (Tema Dark / Palette Roxo, Lilás e Azul Royal)
+* **Vercel** (Hospedagem e Deploy Contínuo via integração com o GitHub)
 
-O Vite gera a versão de publicação na pasta `dist`.
+### Competências Técnicas & Analytics
+* **Business Intelligence:** Power BI, DAX, Power Query, Excel Avançado, ETL
+* **Linguagens & Bancos de Dados:** Python (Pandas, NumPy, Matplotlib, Scikit-learn), SQL (PostgreSQL, SQL Server)
+* **Inteligência Artificial & Cloud:** Engenharia de Prompts, RAG, Agentes de IA, Git/GitHub, Fundamentos de Cloud
 
-## Personalizações importantes
+---
 
-### Links
-No arquivo `src/App.jsx`, procure as constantes `GITHUB` e `LINKEDIN` no começo do arquivo. Atualize os endereços caso necessário.
-
-### Projetos
-Os cards estão no array `projects`, no começo de `src/App.jsx`. Os seis cards iniciais são **modelos demonstrativos**, não afirmações de que esses projetos já foram concluídos. Antes de divulgar:
-- atualize título e descrição;
-- inclua os links reais de cada repositório no campo `repo`;
-- troque a abordagem e os resultados por aquilo que você realmente implementou;
-- adicione imagens ou capturas de tela próprias, se houver.
-
-### Formação
-A seção de formação é um texto inicial editável. Acrescente instituição, semestre e cursos conforme desejar.
-
-### Tecnologias
-A lista inicial é uma estrutura para personalizar. Ajuste os itens para que representem seu nível real de conhecimento.
-
-## Estrutura
+## 📁 Estrutura do Projeto
 
 ```text
-portfolio-ciencia-dados/
+Portfolio/
 ├── public/
+│   └── minha-foto.jpg      # Imagem de perfil utilizada no Hero
 ├── src/
-│   ├── App.jsx
-│   ├── main.jsx
-│   └── styles.css
-├── index.html
-├── package.json
-└── README.md
-```
-
-## Tecnologias utilizadas
-
-- React
-- Vite
-- CSS responsivo
-- Lucide React (ícones)
-
-O projeto não precisa de banco de dados nem de chaves de API para funcionar.
-
-## Publicação futura
-
-Depois de testar localmente, o projeto pode ser enviado a um **novo repositório** no GitHub e publicado em um **novo projeto** na Vercel. Não é necessário substituir nem modificar o site atual.
+│   ├── App.jsx             # Componente principal e estrutura de dados
+│   ├── main.jsx            # Ponto de entrada do React
+│   └── styles.css          # Estilização global e variáveis de tema
+├── .gitignore              # Regras de exclusão do Git
+├── index.html              # HTML base com fontes e SEO
+├── package.json            # Dependências e scripts do projeto
+├── vite.config.js          # Configuração do bundler Vite
+└── README.md               # Documentação do repositório
